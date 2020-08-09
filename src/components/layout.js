@@ -1,44 +1,37 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import Helmet from "react-helmet"
+import styled, { ThemeProvider } from "styled-components"
 
+import GlobalStyle, { theme } from "../utils/theme"
+import config from "../utils/config"
 import Header from "./header"
+// import Nav from "./Nav"
+// import Footer from "./Footer"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const Container = styled.div`
+  min-height: 90vh;
+`
 
-  return (
+const Layout = ({ children }) => (
+  <ThemeProvider theme={theme}>
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      <Helmet>
+        <title>{config.siteName}</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta description={config.description} />
+      </Helmet>
+      <GlobalStyle />
+      <Container id="wrapper" className="fade-in">
+        <Header />
+        <Nav />
+        <div id="main" role="main">
+          {children}
+        </div>
+        {/* <Footer /> */}
+      </Container>
     </>
-  )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  </ThemeProvider>
+)
 
 export default Layout

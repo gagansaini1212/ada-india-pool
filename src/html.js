@@ -17,6 +17,11 @@ export default class HTML extends React.Component {
 
           {/* Add custom css or scripts here */}
           <link rel="icon" type="image/png" href="/favicon/favicon.ico" />
+          <script
+            defer
+            src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+          ></script>
+
           {/* Add custom css or scripts here */}
 
           {this.props.headComponents}
