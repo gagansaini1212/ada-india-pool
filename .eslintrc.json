@@ -1,17 +1,14 @@
 {
-  "root": true,
   "parser": "babel-eslint",
-  "extends": ["airbnb", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "prettier/standard"
+  ],
   "plugins": ["prettier"],
-  "env": {
-    "browser": true
-  },
-  "globals": {
-    "graphql": true
-  },
-  "settings": {
-    "import/core-modules": ["prop-types", "react", "graphql", "google"]
-  },
   "rules": {
     "prettier/prettier": [
       "error",
@@ -19,19 +16,19 @@
         "singleQuote": true,
         "trailingComma": "all",
         "bracketSpacing": true,
-        "jsxBracketSameLine": true
+        "jsxBracketSameLine": false,
+        "arrowParens": "always"
       }
     ],
-    "jsx-a11y/anchor-is-valid": 0,
-    "react/jsx-filename-extension": 0,
-    "react/prop-types": 0,
-    "react/no-danger": 0,
-    "class-methods-use-this": 0,
-    "react/prefer-stateless-function": 0,
-    "react/forbid-prop-types": 0,
-    "react/jsx-one-expression-per-line": 0,
-    "react/jsx-props-no-spreading": 0,
-    "react/jsx-closing-bracket-location": 0,
-    "import/prefer-default-export": 0
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": "off",
+    "react/prop-types": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
+    "global-require": "off"
+  },
+  "globals": {
+    "window": true
   }
 }

@@ -23,8 +23,8 @@ const Layout = ({ children }) => (
       </Helmet>
       <GlobalStyle />
       <Container id="wrapper" className="fade-in">
-        <Header />
-        <Nav />
+        {/* <Header />
+        <Nav /> */}
         <div id="main" role="main">
           {children}
         </div>
