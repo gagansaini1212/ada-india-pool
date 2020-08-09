@@ -1,16 +1,16 @@
-import React from "react"
-import Helmet from "react-helmet"
-import styled, { ThemeProvider } from "styled-components"
+import React from "react";
+import Helmet from "react-helmet";
+import styled, { ThemeProvider } from "styled-components";
 
-import GlobalStyle, { theme } from "../utils/theme"
-import config from "../utils/config"
-import Header from "./header"
+import GlobalStyle, { theme } from "../utils/theme";
+import config from "../utils/config";
+import Header from "./header";
 // import Nav from "./Nav"
 // import Footer from "./Footer"
 
 const Container = styled.div`
   min-height: 90vh;
-`
+`;
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -32,6 +32,6 @@ const Layout = ({ children }) => (
       </Container>
     </>
   </ThemeProvider>
-)
+);
 
-export default Layout
+export default Layout;

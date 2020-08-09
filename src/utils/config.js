@@ -12,4 +12,4 @@ module.exports = {
   fbAppID: "@NAME-HERE",
 
   type: "website",
-}
+};

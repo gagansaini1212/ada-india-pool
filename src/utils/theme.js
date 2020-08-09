@@ -1,7 +1,7 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
-export const theme = {}
+export const theme = {};
 
-const GlobalStyle = createGlobalStyle``
+const GlobalStyle = createGlobalStyle``;
 
-export default GlobalStyle
+export default GlobalStyle;
